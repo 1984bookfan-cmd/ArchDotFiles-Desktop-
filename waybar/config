@@ -1,0 +1,119 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,   // pushes the bar down 10px from the top
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 0,
+
+
+
+    "modules-left": ["clock", "custom/weather", "custom/chatgpt", "tray", "wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "battery"],
+
+
+    "clock": {
+        "tooltip-format": "<big>{:%A, %d}</big>\n<tt><small>{calendar}</small></tt>",
+    		"on-click": "gnome-calendar", 
+        "format":"{:%H:%M}",
+    },
+    "custom/chatgpt":{
+        "format":"      ",
+        "on-click":"chromium --new-window https://chatgpt.com/",  
+        "tooltip-format": "ChatGPT",            
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 20,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+              "rofi"
+          ],
+    }, 
+
+    //Center Modules:
+    
+    //Right Modules:
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    }, 
+    "pulseaudio": {
+        "max-volume": 150, 
+        "scroll-step": 10,
+        "format": "{icon}",
+        "tooltip-format": "{volume}% | {desc}",
+        "format-bluetooth": "{icon} ",
+        "format-bluetooth-muted": "󰖁 ",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pwvucontrol"
+    },
+   "backlight": {
+	     "device": "intel_backlight",
+	     "format": "{percent}% {icon}",
+	     "format-icons": ["", "☀️"]
+    },    
+   "cpu": {
+        "interval": 10,
+        "format": "  {usage}%",
+        "max-length": 10,
+        "format-alt-click": "click-right",
+        "format-alt": "",
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input", 
+        "format": " {temperatureC}°C",
+        "format-alt-click": "click-right",
+        "format-alt": "",
+        "critical-threshold": 70,
+        "format-critical": " {temperatureC}°C",
+    },
+    "memory": {
+        "interval": 30,
+        "format-alt-click": "click-right",
+        "format-alt": "{used:0.1f}G/{total:0.1f}G ", 
+        "format": "{percentage}% " 
+    },
+   "network": {
+        "format-wifi": "({signalStrength}%) ",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip-format": "{essid} | {ifname}",
+        "max-length": 50,
+        "on-click": "kitty -e 'nmtui'", 
+        "format-alt-click": "click-right", 
+        "format-alt": "{signalStrength}%   | {ipaddr} | ▼ {bandwidthDownBytes} | ▲ {bandwidthUpBytes} "
+    }, 
+   "battery": {
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}%",
+        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+        "interval": 1,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+        "on-click": "2"
+   },  
+   "custom/weather": {
+        "format": " ",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "$HOME/.config/waybar/scripts/wttr3.py",
+        "return-type": "json", 
+        "format-alt": " {} ", 
+        "format-alt-click": "click-right",
+    },
+ 
+  },
+}

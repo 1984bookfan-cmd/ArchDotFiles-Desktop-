@@ -1,0 +1,32 @@
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "keybind" : "p"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "logout",
+    "action" : "loginctl kill-session $XDG_SESSION_ID",
+    "keybind" : "e"
+}
+{
+    "label" : "hibernate",
+    "action" : "hyprlock && systemctl hibernate",
+    "keybind" : "h"
+}
+
+{
+    "label" : "sleep",
+    "action" : "systemctl suspend",
+    "keybind" : "s"
+}
+
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "keybind" : "l"
+}

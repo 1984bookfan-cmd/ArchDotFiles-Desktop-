@@ -1,0 +1,312 @@
+@define-color foreground	#f8f8f2;
+@define-color background	rgba(255,255,255,1);
+@define-color orange	#ffb86c;
+@define-color gray	#44475a;
+@define-color black #21222c;
+@define-color red	#ff5555;
+@define-color green	#50fa7b;
+@define-color yellow	#f1fa8c;
+@define-color cyan	#8be9fd;
+@define-color blue	#6272a4;
+@define-color purple	#bd93f9;
+@define-color pink	#ff79c6;
+@define-color white #ffffff;
+@define-color brred #ff6e6e;
+@define-color brgreen #69ff94;
+@define-color bryellow #ffffa5;
+@define-color brcyan #a4ffff;
+@define-color brblue #6272a4;
+@define-color brpurple #d6acff;
+@define-color brpink #ff92df;
+
+
+@define-color workspace_background	@background;
+@define-color workspace_button	@foreground;
+@define-color workspace_active	@black;
+@define-color workspace_active_background	@green;
+@define-color workspace_urgent	@white;
+@define-color workspace_urgent_background	@brred;
+@define-color workspace_hover	@black;
+@define-color workspace_hover_background	@pink;
+@define-color critical	@red;
+@define-color warning	@yellow;
+
+* {
+    border: none;
+    font-family: "Segoe UI", "Ubuntu";
+    font-size: 14px;
+    color: #ffffff;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+}
+/*-----module groups----*/
+#workspaces button {
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+}
+#workspaces button.focused {
+    background-color: rgba(204,51,255,0.8);
+}
+#workspaces button.active {
+    background: rgba(51,204,255,0.8);
+    color: white;  
+}
+#workspaces button:hover {
+    background: rgba(204,51,255,0.8);
+    color: white;
+}
+
+/* Default: no rounding for all buttons */
+#workspaces button {
+    border-radius: 0;
+    margin: 0 0px; /* optional spacing between buttons */
+}
+
+/* Single workspace only: full rounding */
+#workspaces button:only-child {
+    padding: 8px 5px;  /* top/bottom = 8px, left/right = 16px from perimeter */
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+}
+
+/* First workspace, but only if not the only child */
+#workspaces button:first-child:not(:only-child) {
+    padding: 8px 3px;  /* top/bottom = 8px, left/right = 16px from perimeter */
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 10px 0 0 10px;
+}
+
+/* Last workspace, but only if not the only child */
+#workspaces button:last-child:not(:only-child) {
+    padding: 8px 3px;  /* top/bottom = 8px, left/right = 16px from perimeter */
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Middle workspaces (between first and last) */
+#workspaces button:not(:first-child):not(:last-child) {
+    padding: 8px 3px;  /* top/bottom = 8px, left/right = 16px from perimeter */
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 0;
+}
+
+
+
+
+
+
+
+#clock{
+    padding: 8px 16px;  /* top/bottom = 8px, left/right = 16px from perimeter */
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 0px;
+    padding-left: 16px;
+    padding-right: 0px;
+    border-radius: 10px 0px 0px 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8);
+
+
+}
+#battery{
+    padding: 8px 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8)
+
+}
+#cpu{
+    padding: 8px 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px 0px 0px 10px; /* top left, top-right, bottom-right, bottom-left*/
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8);
+    font-weight: 600;
+}
+#temperature{
+    color: #ffffff;
+    background: rgba (0,0,0,0.8);
+
+    margin-right: 8px;
+    padding-left: 5px; 
+    padding-right: 16px;
+    border-radius: 0px 10px 10px 0px;
+    margin-top: 3px; 
+    margin-bottom: 3px;
+}
+#temperature.critical {
+    color: red;
+    background: rgba(0,0,0,0.8); 
+   
+    margin-right: 8px;
+    padding-left: 16px; 
+    padding-right: 16px;
+    border-radius: 10px;
+    margin-top: 3px; 
+    margin-bottom: 3px;
+
+
+    border-bottom: 3px dashed red;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#memory{
+    padding: 8px 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8)  
+}
+#network{
+    padding: 8px 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8) 
+}
+#network.ethernet{
+    padding: 8px 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    padding-left: 11px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8) 
+}
+#pulseaudio{
+    padding: 8px 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8)
+
+}
+#tray{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8); 
+
+}
+#taskbar{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none; 
+    color: #ffffff; 
+    background: rgba (0,0,0,0.8);  
+}
+#taskbar button.active{
+  background: rgba(51,204,255,0.8); 
+  border-bottom: 3px solid rgba(255,255,255,1)
+}
+#taskbar button:hover{
+    background: rgba(204,51,255,1); 
+    border-bottom: 3px solid #33ccff;  
+}
+#idle_inhibitor {
+    padding: 0 10px;
+}
+#mode {
+    color: #cc3436;
+    font-weight: bold;
+}
+#custom-chatgpt{
+    padding: 8px 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    transition: none; 
+
+    background: rgba(0,0,0,0.8);
+    background-image: url("/home/v10/.config/waybar/images/chatgpt_logo.png");
+    background-size: 70% auto;   /* or cover, or exact px values */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#custom-weather{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    padding-left: 3px;
+    padding-right: 10px;
+    border-radius: 0px 10px 10px 0px;
+    transition: none; 
+    background: rgba(0,0,0,0.8);
+
+}
+/*-----Indicators----*/
+#idle_inhibitor.activated {
+    color: #2dcc36;
+}
+#pulseaudio.muted {
+    color: #cc3436;
+}
+#battery.charging {
+    color: #2dcc36;
+}
+#battery.warning:not(.charging) {
+	color: #e6e600;
+}
+#battery.critical:not(.charging) {
+    color: #cc3436;
+}
+#temperature.critical {
+    color: #cc3436;
+}
+/*-----Colors----*/
+/*
+ *rgba(0,85,102,1),#005566 --> Indigo(dye)
+ *rgba(0,43,51,1),#002B33 --> Dark Green 
+ *rgba(0,153,153,1),#009999 --> Persian Green 
+ *
+ */
