@@ -6,7 +6,7 @@
 
 
 
-The Waybar is optimized for my displays, I haven't really optimized the code to be able to fit perfectly for every screen. Alterations to the exact dimensions will be needed to made. 
+The Waybar is optimized for my displays (3440x1440 & 2560x1440), I haven't really optimized the code to be able to fit perfectly for every screen. Alterations to the exact dimensions will probably be needed to made. 
 
 You can alt (right-click) on the: clock, cpu, cputemp, RAM usage, and network, for a more detailed view of those services. 
 Alt clicking just right to the clock brings up your typical weather report. 
