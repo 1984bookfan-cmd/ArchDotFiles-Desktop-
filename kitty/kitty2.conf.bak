@@ -1,0 +1,70 @@
+# font_family JetBrainsMono Nerd Font
+# bold_font JetBrainsMono Nerd Font Mono Extra Bold 
+# bold_italic_font JetBrainsMono Nerd Font Mono Extra Bold Italic
+
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Adwaita Mono"
+bold_font        family='Adwaita Mono' postscript_name=Adwaita-Mono-Bold
+italic_font      auto
+bold_italic_font family='Adwaita Mono' postscript_name=Adwaita-Mono-Bold-Italic
+# END_KITTY_FONT
+
+# MATRIX THEME
+
+background           #000000
+foreground           #ffffff
+
+# Black
+color0   #000000
+color8   #005500
+
+# Red
+color1   #ff0000
+color9   #ff5555
+
+# Green
+color2   #00ff00
+color10  #55ff55
+
+# Yellowish / Olive
+color3   #008800
+color11  #88ff88
+
+# Blue-green accent
+color4   #006600
+color12  #00bb00
+
+# Cyan accent
+color5   #00ffff
+color13  #55ffff
+
+# Mid-green
+color6   #00aa00
+color14  #ccffcc
+
+# Gray / White
+color7   #bbbbbb
+color15  #ffffff
+
+# Cursor
+cursor              #00ff00
+cursor_text_color   #000000
+
+# Selection
+selection_background #003300
+selection_foreground #00ff00
+
+# URL styling
+url_color #00ff88
+url_style underline
+
+# Fonts
+bold_font auto
+italic_font auto
+
+# Transparency
+background_opacity 0.6
+
+

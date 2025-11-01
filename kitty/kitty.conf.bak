@@ -1,0 +1,15 @@
+# font_family JetBrainsMono Nerd Font
+# bold_font JetBrainsMono Nerd Font Mono Extra Bold 
+# bold_italic_font JetBrainsMono Nerd Font Mono Extra Bold Italic
+
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Adwaita Mono"
+bold_font        family='Adwaita Mono' postscript_name=Adwaita-Mono-Bold
+italic_font      auto
+bold_italic_font family='Adwaita Mono' postscript_name=Adwaita-Mono-Bold-Italic
+# END_KITTY_FONTS
+
+background_opacity 0.5
+background_blur 0
