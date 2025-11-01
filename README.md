@@ -12,3 +12,5 @@ You can alt (right-click) on the: clock, cpu, cputemp, RAM usage, and network, f
 Alt clicking just right to the clock brings up your typical weather report. 
 
 Again this is a very rough config that I plan on fixing later down the line, but for now here it is. 
+
+The resource monitor used is called missioncenter.
